@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "eddda35cda9ca7de28d32bb893825be9",
+    "revision": "0fd9421d785228c7e845489ec79cef5c",
     "url": "/plasticfree/index.html"
   },
   {
-    "revision": "5c6a4b6f8bdabefc3d18",
+    "revision": "cd1f7e8ed0ee7d7cc421",
     "url": "/plasticfree/static/css/main.5f361e03.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/plasticfree/static/js/2.8a8c44f2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5c6a4b6f8bdabefc3d18",
-    "url": "/plasticfree/static/js/main.293ec96f.chunk.js"
+    "revision": "cd1f7e8ed0ee7d7cc421",
+    "url": "/plasticfree/static/js/main.1ec4d23c.chunk.js"
   },
   {
     "revision": "ceb1f04442b019754a69",
