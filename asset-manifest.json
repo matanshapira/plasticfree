@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/plasticfree/static/css/main.5f361e03.chunk.css",
-    "main.js": "/plasticfree/static/js/main.1ec4d23c.chunk.js",
-    "main.js.map": "/plasticfree/static/js/main.1ec4d23c.chunk.js.map",
+    "main.js": "/plasticfree/static/js/main.1659d1f6.chunk.js",
+    "main.js.map": "/plasticfree/static/js/main.1659d1f6.chunk.js.map",
     "runtime-main.js": "/plasticfree/static/js/runtime-main.ade09f6c.js",
     "runtime-main.js.map": "/plasticfree/static/js/runtime-main.ade09f6c.js.map",
-    "static/js/2.8a8c44f2.chunk.js": "/plasticfree/static/js/2.8a8c44f2.chunk.js",
-    "static/js/2.8a8c44f2.chunk.js.map": "/plasticfree/static/js/2.8a8c44f2.chunk.js.map",
+    "static/js/2.dcd2b067.chunk.js": "/plasticfree/static/js/2.dcd2b067.chunk.js",
+    "static/js/2.dcd2b067.chunk.js.map": "/plasticfree/static/js/2.dcd2b067.chunk.js.map",
     "index.html": "/plasticfree/index.html",
-    "precache-manifest.2085690584172434b57ac0c8faf6cb49.js": "/plasticfree/precache-manifest.2085690584172434b57ac0c8faf6cb49.js",
+    "precache-manifest.ef4fe76eb2499f52353753d26efa712e.js": "/plasticfree/precache-manifest.ef4fe76eb2499f52353753d26efa712e.js",
     "service-worker.js": "/plasticfree/service-worker.js",
     "static/css/main.5f361e03.chunk.css.map": "/plasticfree/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.8a8c44f2.chunk.js.LICENSE.txt": "/plasticfree/static/js/2.8a8c44f2.chunk.js.LICENSE.txt"
+    "static/js/2.dcd2b067.chunk.js.LICENSE.txt": "/plasticfree/static/js/2.dcd2b067.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.ade09f6c.js",
-    "static/js/2.8a8c44f2.chunk.js",
+    "static/js/2.dcd2b067.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.1ec4d23c.chunk.js"
+    "static/js/main.1659d1f6.chunk.js"
   ]
 }
