@@ -1,6 +1,14 @@
 import React from 'react';
 import { requests, addresses } from './content.js';
 
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
+import CardMedia from '@material-ui/core/CardMedia';
+import Divider from '@material-ui/core/Divider';
+
+import banner from './banner.png';
+
 import './App.css';
 import copy from 'copy-to-clipboard';
 
@@ -70,27 +78,40 @@ class App extends React.Component {
 
 
   render() {
+    const Style = {
+      height: 400,
+    };
     return (
-      <div dir='rtl'>
-        <div style={{ fontWeight: 'bold'}}>פתיחת פניה באתר העיריה</div>
-        <div>
-        1. לחץ על הכפתור להפניה לאתר העיריה ושמירת תוכן הפניה ל-clipboard
-        </div>
-        <div>
-        2. מלא פרטים מלאים באתר העיריה
-        </div>
-        <div>3. בצע פעולת 'הדבק' על מנת להכניס את תוכן הפניה ששמרנו עבורך</div>
-        <div><button onClick={() => this.openTicket()}>פתח פניה במוקד העיריה</button></div>
-        <p />
-        <div style={{ fontWeight: 'bold'}}>שליחת מייל לאנשי מפתח בעיריה</div>
-        <div><button onClick={this.onEmailClicked}>שליחת מייל בעזרת תוכנת המייל שלך</button></div>
-        <div> {isMobile.any() ? '' : <button onClick={this.onGmailClicked}>שליחת מייל בעזרת GMail</button>}</div>
-        <p />
-        <div style={{ fontWeight: 'bold'}}>תוכן הפניה:</div>
-        <p></p>
-        <div style={{ fontWeight: 'bold'}}>{this.state.requestSubject}</div>
-        <div>{this.state.requestBody}</div>
-      </div>
+      <React.Fragment>
+        <CssBaseline />
+        <Container maxWidth="md">
+          <CardMedia  image={banner}  style={Style}></CardMedia>
+          <hr />
+          <div dir='rtl'>  
+            <div style={{ fontWeight: 'bold'}}>פתיחת פניה באתר העיריה</div>
+            <div>
+            1. לחץ על הכפתור להפניה לאתר העיריה ושמירת תוכן הפניה ל-clipboard
+            </div>
+            <div>
+            2. מלא פרטים מלאים באתר העיריה
+            </div>
+            <div>3. בצע פעולת 'הדבק' על מנת להכניס את תוכן הפניה ששמרנו עבורך</div>
+            <div><button onClick={() => this.openTicket()}>פתח פניה במוקד העיריה</button></div>
+            <p />
+            <hr />
+            <div style={{ fontWeight: 'bold'}}>שליחת מייל לאנשי מפתח בעיריה</div>
+            <div><button onClick={this.onEmailClicked}>שליחת מייל בעזרת תוכנת המייל שלך</button></div>
+            <div> {isMobile.any() ? '' : <button onClick={this.onGmailClicked}>שליחת מייל בעזרת GMail</button>}</div>
+            <p />
+            <div style={{ fontWeight: 'bold'}}>תוכן הפניה:</div>
+            <p></p>
+            <div style={{ fontWeight: 'bold'}}>{this.state.requestSubject}</div>
+            <div>{this.state.requestBody}</div>
+          </div> 
+        </Container>
+      </React.Fragment>
+      
+      
     );
   }
 }
