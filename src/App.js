@@ -6,8 +6,10 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import CardMedia from '@material-ui/core/CardMedia';
 import Divider from '@material-ui/core/Divider';
+import Button from '@material-ui/core/Button';
+import Box from '@material-ui/core/Box';
 
-import banner from './banner.png';
+import banner from './banner.jpg';
 
 import './App.css';
 import copy from 'copy-to-clipboard';
@@ -75,39 +77,38 @@ class App extends React.Component {
     mixpanel.track('Compose Email Clicked', { client: 'gmail' });
     window.open(this.composeGmailUrl());
   }
-
+ 
 
   render() {
-    const Style = {
+    const bannerStyle = {
       height: 400,
     };
+    
+
     return (
       <React.Fragment>
         <CssBaseline />
         <Container maxWidth="md">
-          <CardMedia  image={banner}  style={Style}></CardMedia>
-          <hr />
-          <div dir='rtl'>  
-            <div style={{ fontWeight: 'bold'}}>פתיחת פניה באתר העיריה</div>
-            <div>
-            1. לחץ על הכפתור להפניה לאתר העיריה ושמירת תוכן הפניה ל-clipboard
-            </div>
-            <div>
-            2. מלא פרטים מלאים באתר העיריה
-            </div>
-            <div>3. בצע פעולת 'הדבק' על מנת להכניס את תוכן הפניה ששמרנו עבורך</div>
-            <div><button onClick={() => this.openTicket()}>פתח פניה במוקד העיריה</button></div>
-            <p />
-            <hr />
-            <div style={{ fontWeight: 'bold'}}>שליחת מייל לאנשי מפתח בעיריה</div>
-            <div><button onClick={this.onEmailClicked}>שליחת מייל בעזרת תוכנת המייל שלך</button></div>
-            <div> {isMobile.any() ? '' : <button onClick={this.onGmailClicked}>שליחת מייל בעזרת GMail</button>}</div>
-            <p />
-            <div style={{ fontWeight: 'bold'}}>תוכן הפניה:</div>
-            <p></p>
-            <div style={{ fontWeight: 'bold'}}>{this.state.requestSubject}</div>
-            <div>{this.state.requestBody}</div>
-          </div> 
+          <CardMedia image={banner}  style={bannerStyle}></CardMedia>
+          <Divider style={{ marginTop: '10px' }} />
+          <Box dir='rtl'>  
+            <Box>
+            <Typography variant='h4'>פתיחת פניה באתר העיריה</Typography >
+              1. לחץ על הכפתור להפניה לאתר העיריה ושמירת תוכן הפניה ל-clipboard<br />
+              2. מלא פרטים מלאים באתר העיריה<br/>
+              3. בצע פעולת 'הדבק' על מנת להכניס את תוכן הפניה ששמרנו עבורך<br/>
+              <Button color='secondary' variant='contained' onClick={() => this.openTicket()}>פתח פניה במוקד העיריה</Button>
+            </Box>
+            <Divider style={{ marginTop: '10px' }} />
+            <Box>
+              <Typography variant='h4'>שליחת מייל לאנשי מפתח בעיריה</Typography>
+              <Button color='secondary' variant='contained' onClick={this.onEmailClicked}>שליחת מייל בעזרת תוכנת המייל שלך</Button>
+              {isMobile.any() ? '' : <Button style={{ margin: '10px' }} variant='contained' color='secondary' onClick={this.onGmailClicked}>שליחת מייל בעזרת GMail</Button>}<br/>
+              <Typography variant='h4'>תוכן הפניה</Typography><br/>
+              <Typography variant='h5'>{this.state.requestSubject}</Typography>
+              <div>{this.state.requestBody}</div>
+            </Box>
+          </Box> 
         </Container>
       </React.Fragment>
       
