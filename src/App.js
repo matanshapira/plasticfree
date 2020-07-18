@@ -81,31 +81,55 @@ class App extends React.Component {
 
   render() {
     const bannerStyle = {
+      width: '100%'
+    };
+
+    const buttonStyle = {
+      display: 'flex',
+      marginRight: 'auto',
+      marginLeft: '25px',
     };
     
+    const mailButtonStyle = {
+      marginLeft: '25px',
+      marginTop: '10px',
+    };
+
+    const mailButtonsBoxStyle = {
+      display: 'flex',
+      marginRight: 'auto',
+      width: 'fit-content',
+    };
+
 
     return (
       <React.Fragment>
         <CssBaseline />
-        <Container maxWidth="md">
+        <Container maxWidth="sm">
           <Box dir='rtl'>  
             <img src={banner}  style={bannerStyle}/>
             <Divider style={{ marginTop: '10px' }} />
             <Box>
               <Typography variant='h4'>פתיחת פניה באתר העיריה</Typography >
-              1. לחץ על הכפתור להפניה לאתר העיריה ושמירת תוכן הפניה ל-clipboard<br />
+              1. לחץ על הכפתור להפניה לאתר העיריה ושמירת תוכן הפניה ל-Clipboard<br />
               2. מלא פרטים מלאים באתר העיריה<br/>
               3. בצע פעולת 'הדבק' על מנת להכניס את תוכן הפניה ששמרנו עבורך<br/>
-              <Button color='secondary' variant='contained' onClick={() => this.openTicket()}>פתח פניה במוקד העיריה</Button>
+              <Box>
+                <Button style={buttonStyle} color='secondary' variant='contained' onClick={() => this.openTicket()}>פתח פניה<br />במוקד העיריה</Button>
+              </Box>
             </Box>
             <Divider style={{ marginTop: '10px' }} />
             <Box>
               <Typography variant='h4'>שליחת מייל לאנשי מפתח בעיריה</Typography>
-              <Button color='secondary' variant='contained' onClick={this.onEmailClicked}>שליחת מייל בעזרת תוכנת המייל שלך</Button>
-              {isMobile.any() ? '' : <Button style={{ margin: '10px' }} variant='contained' color='secondary' onClick={this.onGmailClicked}>שליחת מייל בעזרת GMail</Button>}<br/>
-              <Typography variant='h4'>תוכן הפניה</Typography><br/>
-              <Typography variant='h5'>{this.state.requestSubject}</Typography>
-              <div>{this.state.requestBody}</div>
+              <Box style={mailButtonsBoxStyle}>
+                <Button style={mailButtonStyle} color='secondary' variant='contained' onClick={this.onEmailClicked}>שלח מייל<br />בעזרת תוכנת המייל שלך</Button>
+                {isMobile.any() ? '' : <Button style={mailButtonStyle} variant='contained' color='secondary' onClick={this.onGmailClicked}>שלח מייל<br />בעזרת Gmail</Button>}<br/>
+              </Box>
+              <Divider style={{ marginTop: '10px' }} />
+              <Typography variant='h4'>תוכן הפניה</Typography>
+              תוכן זה יועתק ל-Clipboard שלך<br /><br/>
+              <Typography variant='subtitle2'>{this.state.requestSubject}</Typography>
+              <Typography variant='body2'>{this.state.requestBody}</Typography>
             </Box>
           </Box> 
         </Container>
