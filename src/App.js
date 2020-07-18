@@ -81,7 +81,6 @@ class App extends React.Component {
 
   render() {
     const bannerStyle = {
-      height: 400,
     };
     
 
@@ -89,11 +88,11 @@ class App extends React.Component {
       <React.Fragment>
         <CssBaseline />
         <Container maxWidth="md">
-          <CardMedia image={banner}  style={bannerStyle}></CardMedia>
-          <Divider style={{ marginTop: '10px' }} />
           <Box dir='rtl'>  
+            <img src={banner}  style={bannerStyle}/>
+            <Divider style={{ marginTop: '10px' }} />
             <Box>
-            <Typography variant='h4'>פתיחת פניה באתר העיריה</Typography >
+              <Typography variant='h4'>פתיחת פניה באתר העיריה</Typography >
               1. לחץ על הכפתור להפניה לאתר העיריה ושמירת תוכן הפניה ל-clipboard<br />
               2. מלא פרטים מלאים באתר העיריה<br/>
               3. בצע פעולת 'הדבק' על מנת להכניס את תוכן הפניה ששמרנו עבורך<br/>
