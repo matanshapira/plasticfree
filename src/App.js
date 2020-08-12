@@ -109,7 +109,7 @@ class App extends React.Component {
           <Box dir='rtl'>  
             <img src={banner}  style={bannerStyle}/>
             <Divider style={{ marginTop: '10px' }} />
-            <Box>
+            <Box>BLA
               <Typography variant='h4'>פתיחת פניה באתר העיריה</Typography >
               1. לחץ על הכפתור להפניה לאתר העיריה ושמירת תוכן הפניה ל-Clipboard<br />
               2. מלא פרטים מלאים באתר העיריה<br/>
