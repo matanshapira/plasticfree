@@ -54,9 +54,10 @@ class App extends React.Component {
   }
 
   openTicket() {
-    copy(this.state.requestBody);
-    mixpanel.track('Open-Ticket Clicked');
-    window.open('https://www5.tel-aviv.gov.il/TlvForms/106plus/');
+    copy(`שלום,\n${this.state.requestBody}`);
+    const targetUrl = 'https://www5.tel-aviv.gov.il/TlvForms/106plus/';
+    mixpanel.track('Open-Ticket Clicked', { targetUrl });
+    window.open(targetUrl);
   }
   composeEmailUrl() {
     const targets = addresses.join(';');
@@ -65,7 +66,8 @@ class App extends React.Component {
 
   composeGmailUrl() {
     const targets = addresses.join(';');
-    return `https://mail.google.com/mail/?view=cm&fs=1&to=${targets}&su=${this.state.requestSubject}&body=${this.state.requestBody}`;
+    const body = `שלום,%0D%0A${this.state.requestBody}`;
+    return `https://mail.google.com/mail/?view=cm&fs=1&to=${targets}&su=${this.state.requestSubject}&body=${body}`;
   }
 
   onEmailClicked = () => {
