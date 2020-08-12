@@ -129,8 +129,8 @@ class App extends React.Component {
               </Box>
               <Divider style={{ marginTop: '10px' }} />
               <Typography variant='h4'>תוכן הפניה</Typography>
-              תוכן זה יועתק ל-Clipboard שלך<br /><br/>
-              <Typography variant='subtitle2'>{this.state.requestSubject}</Typography>
+              <Typography variant='body1'>תוכן זה יועתק ל-Clipboard שלך<br /><br/></Typography>
+              <Typography variant='h6'>{this.state.requestSubject}</Typography>
               <Typography variant='body2'>{this.state.requestBody}</Typography>
             </Box>
           </Box> 
