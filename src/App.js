@@ -14,6 +14,9 @@ import banner from './banner.jpg';
 import './App.css';
 import copy from 'copy-to-clipboard';
 
+const URL_106 = 'https://www5.tel-aviv.gov.il/TlvForms/106plus/'
+const URL_EDU = 'https://www5.tel-aviv.gov.il/tlvforms/tlvpublicpetition/?st=41';
+
 var mixpanel = require('mixpanel-browser');
 mixpanel.init('99f509e7db2efd670d8fa645fa070b1a');
 
@@ -55,7 +58,7 @@ class App extends React.Component {
 
   openTicket() {
     copy(`שלום,\n${this.state.requestBody}`);
-    const targetUrl = 'https://www5.tel-aviv.gov.il/TlvForms/106plus/';
+    const targetUrl = URL_EDU;
     mixpanel.track('Open-Ticket Clicked', { targetUrl });
     window.open(targetUrl);
   }
