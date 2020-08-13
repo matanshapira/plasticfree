@@ -111,13 +111,19 @@ class App extends React.Component {
           <Box dir='rtl'>  
             <img src={banner}  style={bannerStyle}/>
             <Divider style={{ marginTop: '10px' }} />
+            
+            <Typography variant='h4'>תוכן הפניה</Typography>
+            <Typography variant='body1'>תוכן זה יועתק ל-Clipboard שלך<br /><br/></Typography>
+            <Typography variant='h6'>{this.state.requestSubject}</Typography>
+            <Typography variant='body2'>{this.state.requestBody}</Typography>       
+            <Divider style={{ marginTop: '10px' }} />     
             <Box>
               <Typography variant='h4'>פתיחת פניה באתר העיריה</Typography >
-              1. לחץ על הכפתור להפניה לאתר העיריה ושמירת תוכן הפניה ל-Clipboard<br />
-              2. מלא פרטים מלאים באתר העיריה<br/>
-              3. בצע פעולת 'הדבק' על מנת להכניס את תוכן הפניה ששמרנו עבורך<br/>
+              1. לחץ/לחצי על הכפתור להפניה לאתר העיריה ושמירת תוכן הפניה ל-Clipboard<br />
+              2. מלא/י פרטים מלאים באתר העיריה<br/>
+              3. בצע/י פעולת 'הדבק' על מנת להכניס את תוכן הפניה ששמרנו עבורך<br/>
               <Box>
-                <Button style={buttonStyle} color='secondary' variant='contained' onClick={() => this.openTicket()}>פתח פניה<br />במוקד העיריה</Button>
+                <Button style={buttonStyle} color='secondary' variant='contained' onClick={() => this.openTicket()}>העתק פניה ל-Clipboard <br />ופתח פניה באתר העיריה</Button>
               </Box>
             </Box>
             <Divider style={{ marginTop: '10px' }} />
@@ -127,11 +133,6 @@ class App extends React.Component {
                 <Button style={mailButtonStyle} color='secondary' variant='contained' onClick={this.onEmailClicked}>שלח מייל<br />בעזרת תוכנת המייל שלך</Button>
                 {isMobile.any() ? '' : <Button style={mailButtonStyle} variant='contained' color='secondary' onClick={this.onGmailClicked}>שלח מייל<br />בעזרת Gmail</Button>}<br/>
               </Box>
-              <Divider style={{ marginTop: '10px' }} />
-              <Typography variant='h4'>תוכן הפניה</Typography>
-              <Typography variant='body1'>תוכן זה יועתק ל-Clipboard שלך<br /><br/></Typography>
-              <Typography variant='h6'>{this.state.requestSubject}</Typography>
-              <Typography variant='body2'>{this.state.requestBody}</Typography>
             </Box>
           </Box> 
         </Container>
