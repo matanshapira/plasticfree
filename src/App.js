@@ -58,7 +58,7 @@ class App extends React.Component {
 
   openTicket() {
     copy(`שלום,\n${this.state.requestBody}`);
-    const targetUrl = URL_EDU;
+    const targetUrl = Math.floor(Math.random() * 2) ? URL_EDU : URL_106;
     mixpanel.track('Open-Ticket Clicked', { targetUrl });
     window.open(targetUrl);
   }
