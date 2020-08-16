@@ -108,6 +108,7 @@ class App extends React.Component {
       display: 'flex',
       marginRight: 'auto',
       width: 'fit-content',
+      marginBottom: '10px',
     };
 
     const ticketButtonsBoxStyle = {
