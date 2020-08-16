@@ -28,5 +28,4 @@ export const addresses = [
   'irena@yuvalchi.co.il', 'liron@yuvalchi.co.il', 'miko@yuvalchi.co.il', 'elinor@yuvalchi.co.il', 'levana@yuvalchi.co.il', 'mazal@yuvalchi.co.il', 'shimrit@yuvalchi.co.il', 'liat@yuvalchi.co.il', 'meirav@yuvalchi.co.il', 'sharon@yuvalchi.co.il',
   'Call.Habriut@MOH.HEALTH.GOV.IL',
   'hazana@yuvalchi.co.il',
-  'vaadhorimtelaviv@gmail.com',
 ];
