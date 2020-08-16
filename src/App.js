@@ -15,7 +15,13 @@ import './App.css';
 import copy from 'copy-to-clipboard';
 
 const URL_106 = 'https://www5.tel-aviv.gov.il/TlvForms/106plus/'
-const URL_EDU = 'https://www5.tel-aviv.gov.il/tlvforms/tlvpublicpetition/?st=41';
+const URL_EDU_GAN = 'https://www5.tel-aviv.gov.il/tlvforms/tlvpublicpetition/?st=41';
+const URL_EDU_SCHOOL = 'https://www5.tel-aviv.gov.il/tlvforms/tlvpublicpetition/?st=119';
+
+const TargetType = {
+  MOKED_106: '106',
+  EDU: 'edu'
+}
 
 var mixpanel = require('mixpanel-browser');
 mixpanel.init('99f509e7db2efd670d8fa645fa070b1a');
@@ -49,6 +55,7 @@ class App extends React.Component {
     this.state = {
       requestBody: requests[index].body,
       requestSubject: requests[index].subject,
+      target: Math.floor(Math.random() * 2) ? TargetType.EDU : TargetType.MOKED_106,
     };
   }
 
@@ -56,9 +63,8 @@ class App extends React.Component {
     mixpanel.track('Referral Page Shown');
   }
 
-  openTicket() {
+  openTicket(targetUrl) {
     copy(`שלום,\n${this.state.requestBody}`);
-    const targetUrl = Math.floor(Math.random() * 2) ? URL_EDU : URL_106;
     mixpanel.track('Open-Ticket Clicked', { targetUrl });
     window.open(targetUrl);
   }
@@ -81,8 +87,7 @@ class App extends React.Component {
   onGmailClicked = () => {
     mixpanel.track('Compose Email Clicked', { client: 'gmail' });
     window.open(this.composeGmailUrl());
-  }
- 
+  } 
 
   render() {
     const bannerStyle = {
@@ -106,6 +111,27 @@ class App extends React.Component {
       width: 'fit-content',
     };
 
+    const ticketButtonsBoxStyle = {
+      marginTop: '10px',
+
+      display: 'flex',
+      marginRight: 'auto',
+      width: 'fit-content',
+    };
+
+    const moked106 = (
+      <Box style={ticketButtonsBoxStyle}>
+        <Button style={buttonStyle} color='secondary' variant='contained' onClick={() => this.openTicket(URL_106)}>העתק פניה ל-Clipboard <br />ופתח פניה באתר העיריה</Button>
+      </Box>
+    );
+
+    const edu = (
+      <Box style={ticketButtonsBoxStyle}>
+        <Button style={buttonStyle} color='secondary' variant='contained' onClick={() => this.openTicket(URL_EDU_GAN)}>העתק פניה ל-Clipboard <br />ופתח פניה באתר העיריה<br />(גן ילדים)</Button>
+        <Button style={buttonStyle} color='secondary' variant='contained' onClick={() => this.openTicket(URL_EDU_SCHOOL)}>העתק פניה ל-Clipboard <br />ופתח פניה באתר העיריה<br />(בית ספר)</Button>
+      </Box>
+    );
+
 
     return (
       <React.Fragment>
@@ -124,10 +150,8 @@ class App extends React.Component {
               <Typography variant='h4'>פתיחת פניה באתר העיריה</Typography >
               1. לחץ/לחצי על הכפתור להפניה לאתר העיריה ושמירת תוכן הפניה ל-Clipboard<br />
               2. מלא/י פרטים מלאים באתר העיריה<br/>
-              3. בצע/י פעולת 'הדבק' על מנת להכניס את תוכן הפניה ששמרנו עבורך<br/>
-              <Box>
-                <Button style={buttonStyle} color='secondary' variant='contained' onClick={() => this.openTicket()}>העתק פניה ל-Clipboard <br />ופתח פניה באתר העיריה</Button>
-              </Box>
+              3. בצע/י פעולת 'הדבק' על מנת להכניס את תוכן הפניה ששמרנו עבורך<br/>              
+              {this.state.target === TargetType.MOKED_106 ? moked106 : edu}
             </Box>
             <Divider style={{ marginTop: '10px' }} />
             <Box>
