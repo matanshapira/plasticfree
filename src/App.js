@@ -23,8 +23,9 @@ const TargetType = {
 }
 
 var mixpanel = require('mixpanel-browser');
-mixpanel.init('99f509e7db2efd670d8fa645fa070b1a');
-mixpanel.identify();
+mixpanel.init('99f509e7db2efd670d8fa645fa070b1a', {
+  persistence: 'localStorage',
+});
 
 var isMobile = {
   Android: function() {
