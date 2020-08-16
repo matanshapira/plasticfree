@@ -8,7 +8,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Divider from '@material-ui/core/Divider';
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
-
 import banner from './banner.jpg';
 
 import './App.css';
@@ -25,7 +24,7 @@ const TargetType = {
 
 var mixpanel = require('mixpanel-browser');
 mixpanel.init('99f509e7db2efd670d8fa645fa070b1a');
-
+mixpanel.identify();
 
 var isMobile = {
   Android: function() {
