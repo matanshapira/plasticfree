@@ -143,7 +143,8 @@ class App extends React.Component {
             <Divider style={{ marginTop: '10px' }} />
             
             <Typography variant='h4'>תוכן הפניה</Typography>
-            <Typography variant='body1'>תוכן זה יועתק ל-Clipboard שלך<br /><br/></Typography>
+            <Typography variant='body1'>* תוכן זה יועתק ל-Clipboard שלך<br/></Typography>
+            <Typography variant='body1'>* חשוב לפתוח פניה וגם לשלוח מייל (בתחתית העמוד)<br /><br/></Typography>
             <Typography variant='h6'>{this.state.requestSubject}</Typography>
             <Typography variant='body2'>{this.state.requestBody}</Typography>       
             <Divider style={{ marginTop: '10px' }} />     
