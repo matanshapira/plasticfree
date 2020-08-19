@@ -16,7 +16,7 @@ import copy from 'copy-to-clipboard';
 const URL_106 = 'https://www5.tel-aviv.gov.il/TlvForms/106plus/'
 const URL_EDU_GAN = 'https://www5.tel-aviv.gov.il/tlvforms/tlvpublicpetition/?st=41';
 const URL_EDU_SCHOOL = 'https://www5.tel-aviv.gov.il/tlvforms/tlvpublicpetition/?st=119';
-const ver = '3';
+const ver = '4';
 const TargetType = {
   MOKED_106: '106',
   EDU: 'edu'
