@@ -16,7 +16,7 @@ import copy from 'copy-to-clipboard';
 const URL_106 = 'https://www5.tel-aviv.gov.il/TlvForms/106plus/'
 const URL_EDU_GAN = 'https://www5.tel-aviv.gov.il/tlvforms/tlvpublicpetition/?st=41';
 const URL_EDU_SCHOOL = 'https://www5.tel-aviv.gov.il/tlvforms/tlvpublicpetition/?st=119';
-const ver = '2';
+const ver = '3';
 const TargetType = {
   MOKED_106: '106',
   EDU: 'edu'
@@ -146,20 +146,21 @@ class App extends React.Component {
             <Typography variant='h6'>{this.state.requestSubject}</Typography>
             <Typography variant='body2'>{this.state.requestBody}</Typography>       
             <Divider style={{ marginTop: '10px' }} />     
-            <Box>
-              <Typography variant='h4'>פתיחת פניה באתר העיריה</Typography >
-              1. לחץ/לחצי על הכפתור להפניה לאתר העיריה ושמירת תוכן הפניה ל-Clipboard<br />
-              2. מלא/י פרטים מלאים באתר העיריה<br/>
-              3. בצע/י פעולת 'הדבק' על מנת להכניס את תוכן הפניה ששמרנו עבורך<br/>              
-              {this.state.target === TargetType.MOKED_106 ? moked106 : edu}
-            </Box>
-            <Divider style={{ marginTop: '10px' }} />
+
             <Box>
               <Typography variant='h4'>שליחת מייל לאנשי מפתח בעיריה</Typography>
               <Box style={mailButtonsBoxStyle}>
                 <Button style={mailButtonStyle} color='secondary' variant='contained' onClick={this.onEmailClicked}>שלח מייל<br />בעזרת תוכנת המייל שלך</Button>
                 {isMobile.any() ? '' : <Button style={mailButtonStyle} variant='contained' color='secondary' onClick={this.onGmailClicked}>שלח מייל<br />בעזרת Gmail</Button>}<br/>
               </Box>
+            </Box>
+            <Divider style={{ marginTop: '10px' }} />
+            <Box>
+              <Typography variant='h4'>פתיחת פניה באתר העיריה</Typography >
+              1. לחץ/לחצי על הכפתור להפניה לאתר העיריה ושמירת תוכן הפניה ל-Clipboard<br />
+              2. מלא/י פרטים מלאים באתר העיריה<br/>
+              3. בצע/י פעולת 'הדבק' על מנת להכניס את תוכן הפניה ששמרנו עבורך<br/>              
+              {this.state.target === TargetType.MOKED_106 ? moked106 : edu}
             </Box>
           </Box> 
         </Container>
