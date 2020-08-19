@@ -65,8 +65,7 @@ class App extends React.Component {
 
   openTicket(targetUrl) {
     copy(`שלום,\n${this.state.requestBody}`);
-    mixpanel.track('Open-Ticket Clicked', { targetUrl });
-    window.open(targetUrl);
+    mixpanel.track('Open-Ticket Clicked', { targetUrl }, () => window.open(targetUrl));
   }
   composeEmailUrl() {
     const targets = addresses.join(';');
@@ -80,13 +79,11 @@ class App extends React.Component {
   }
 
   onEmailClicked = () => {
-    mixpanel.track('Compose Email Clicked', { client: 'native' });
-    window.open(this.composeEmailUrl());
+    mixpanel.track('Compose Email Clicked', { client: 'native' }, () => window.open(this.composeEmailUrl()));
   }
 
   onGmailClicked = () => {
-    mixpanel.track('Compose Email Clicked', { client: 'gmail' });
-    window.open(this.composeGmailUrl());
+    mixpanel.track('Compose Email Clicked', { client: 'gmail' }, () => window.open(this.composeGmailUrl()));
   } 
 
   render() {
