@@ -16,7 +16,7 @@ import copy from 'copy-to-clipboard';
 const URL_106 = 'https://www5.tel-aviv.gov.il/TlvForms/106plus/'
 const URL_EDU_GAN = 'https://www5.tel-aviv.gov.il/tlvforms/tlvpublicpetition/?st=41';
 const URL_EDU_SCHOOL = 'https://www5.tel-aviv.gov.il/tlvforms/tlvpublicpetition/?st=119';
-
+const ver = '2';
 const TargetType = {
   MOKED_106: '106',
   EDU: 'edu'
@@ -26,6 +26,7 @@ var mixpanel = require('mixpanel-browser');
 mixpanel.init('99f509e7db2efd670d8fa645fa070b1a', {
   persistence: 'localStorage',
 });
+mixpanel.register({'App Version': ver});
 
 var isMobile = {
   Android: function() {
