@@ -16,7 +16,7 @@ import copy from 'copy-to-clipboard';
 const URL_106 = 'https://www5.tel-aviv.gov.il/TlvForms/106plus/'
 const URL_EDU_GAN = 'https://www5.tel-aviv.gov.il/tlvforms/tlvpublicpetition/?st=41';
 const URL_EDU_SCHOOL = 'https://www5.tel-aviv.gov.il/tlvforms/tlvpublicpetition/?st=119';
-const ver = '4';
+const ver = '5';
 const TargetType = {
   MOKED_106: '106',
   EDU: 'edu'
@@ -67,7 +67,7 @@ class App extends React.Component {
   openTicket(targetUrl) {
     copy(`שלום,\n${this.state.requestBody}`);
     const win = window.open();
-    mixpanel.track('Open-Ticket Clicked', { targetUrl }, () => win.location = targetUrl);    
+    mixpanel.track('Open-Ticket Clicked', { targetUrl }, () => win.location = targetUrl);
   }
   composeEmailUrl() {
     const targets = addresses.join(',');
@@ -81,13 +81,13 @@ class App extends React.Component {
   }
 
   onEmailClicked = () => {
-    const win = window.open();
-    mixpanel.track('Compose Email Clicked', { client: 'native' }, () => win.location = this.composeEmailUrl());    
+    mixpanel.track('Compose Email Clicked', { client: 'native' });
+    window.open(this.composeEmailUrl());
   }
 
   onGmailClicked = () => {
-    const win = window.open();
-    mixpanel.track('Compose Email Clicked', { client: 'gmail' }, () => win.location = this.composeGmailUrl());
+    mixpanel.track('Compose Email Clicked', { client: 'gmail' });
+    window.open(this.composeGmailUrl());
   } 
 
   render() {
