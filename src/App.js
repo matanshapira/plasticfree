@@ -70,7 +70,7 @@ class App extends React.Component {
     window.open(targetUrl);
   }
   composeEmailUrl() {
-    const targets = addresses.join(';');
+    const targets = addresses.join(',');
     return `mailto:${targets}?subject=${this.state.requestSubject}&body=${this.state.requestBody}`;
   }
 
